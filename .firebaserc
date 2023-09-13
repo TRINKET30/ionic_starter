@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ionicstarter-bc0d9": {
+      "hosting": {
+        "app": [
+          "ionicstarter-bc0d9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ionicstarter-bc0d9"
+  }
+}

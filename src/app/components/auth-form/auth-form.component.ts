@@ -1,12 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { UserCredential } from 'src/app/models/user';
-import { LoadingController, AlertController } from '@ionic/angular';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
+import { UserCredential } from "src/app/models/user";
+import { LoadingController, AlertController } from "@ionic/angular";
 
 @Component({
-  selector: 'app-auth-form',
-  templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.scss']
+  selector: "app-auth-form",
+  templateUrl: "./auth-form.component.html",
+  styleUrls: ["./auth-form.component.scss"],
 })
 export class AuthFormComponent implements OnInit {
   public loading: HTMLIonLoadingElement;
@@ -21,8 +21,8 @@ export class AuthFormComponent implements OnInit {
     private alertCtrl: AlertController
   ) {
     this.authForm = this.formBuilder.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.minLength(6)]
+      email: ["", Validators.compose([Validators.required, Validators.email])],
+      password: ["", Validators.minLength(6)],
     });
   }
 
@@ -30,12 +30,12 @@ export class AuthFormComponent implements OnInit {
 
   submitCredentials(authForm: FormGroup): void {
     if (!authForm.valid) {
-      console.log('Form is not valid yet, current value:', authForm.value);
+      console.log("Form is not valid yet, current value:", authForm.value);
     } else {
       this.showLoading();
       const credentials: UserCredential = {
         email: authForm.value.email,
-        password: authForm.value.password
+        password: authForm.value.password,
       };
       this.formSubmitted.emit(credentials);
     }
@@ -57,7 +57,7 @@ export class AuthFormComponent implements OnInit {
   async handleError(error): Promise<void> {
     const alert = await this.alertCtrl.create({
       message: error.message,
-      buttons: [{ text: 'Ok', role: 'cancel' }]
+      buttons: [{ text: "Ok", role: "cancel" }],
     });
     await alert.present();
   }

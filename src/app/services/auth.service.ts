@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
   Auth,
   authState,
@@ -8,12 +8,12 @@ import {
   signOut,
   User,
   UserCredential,
-} from '@angular/fire/auth';
-import { doc, Firestore, setDoc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+} from "@angular/fire/auth";
+import { doc, Firestore, setDoc } from "@angular/fire/firestore";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class AuthService {
   public userId: string;
@@ -29,8 +29,12 @@ export class AuthService {
 
   async signup(email: string, password: string): Promise<User> {
     try {
-      const newUserCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, email, password);
-      const userReference = doc(this.firestore, `users/${newUserCredential.user.uid}`);
+      const newUserCredential: UserCredential =
+        await createUserWithEmailAndPassword(this.auth, email, password);
+      const userReference = doc(
+        this.firestore,
+        `users/${newUserCredential.user.uid}`
+      );
       await setDoc(userReference, { email }, { merge: true });
       return newUserCredential.user;
     } catch (error) {
