@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="--background: #002857">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Profile Page</ion-title>
+    <ion-title>Perfil de usuario</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="logOut()">
         <ion-icon slot="icon-only" name="log-out"></ion-icon>
@@ -14,13 +14,13 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header> Personal Information </ion-list-header>
+    <ion-list-header> Información personal </ion-list-header>
   </ion-list>
   <ion-item (click)="updateName()">
     <ion-label>
       <ion-grid>
         <ion-row>
-          <ion-col class="text-left" size="5"> Name </ion-col>
+          <ion-col class="text-left" size="5"> Nombre </ion-col>
           <ion-col
             class="text-center"
             size="7"
@@ -33,7 +33,7 @@
             class="placeholder-profile text-center"
             *ngIf="!(userProfile$ | async )?.fullName"
           >
-            <span> Tap here to edit. </span>
+            <span> Toque aquí para editar. </span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -44,7 +44,7 @@
     <ion-label>
       <ion-grid>
         <ion-row>
-          <ion-col class="text-left" size="5"> Email </ion-col>
+          <ion-col class="text-left" size="5"> Correo </ion-col>
           <ion-col
             class="text-center"
             size="7"
@@ -57,7 +57,7 @@
             class="placeholder-profile text-center"
             *ngIf="!(userProfile$ | async )?.email"
           >
-            <span> Tap here to edit. </span>
+            <span> Toque aquí para editar. </span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -68,9 +68,9 @@
     <ion-label>
       <ion-grid>
         <ion-row>
-          <ion-col class="text-left" size="5"> Password </ion-col>
+          <ion-col class="text-left" size="5"> Contraseña </ion-col>
           <ion-col class="text-center" size="7" class="placeholder-profile">
-            <span> Tap here to edit. </span>
+            <span> Toque aquí para editar. </span>
           </ion-col>
         </ion-row>
       </ion-grid>
