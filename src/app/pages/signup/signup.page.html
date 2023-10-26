@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="--background: #002857">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/login"></ion-back-button>
+      <ion-back-button defaultHref="/login" icon="arrow-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>Create your account</ion-title>
+    <ion-title>Registrate</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,10 +11,12 @@
   <app-auth-form
     #signupForm
     (formSubmitted)="signupUser($event)"
-    [actionButtonText]="'Create Account'"
+    [actionButtonText]="'Crear cuenta'"
   ></app-auth-form>
 
-  <ion-button expand="block" fill="clear" routerLink="/login">
-    I already have an account
-  </ion-button>
+  <ion-footer>
+    <ion-button expand="block" fill="clear" routerLink="/login">
+      YA TENGO UNA CUENTA
+    </ion-button>
+  </ion-footer>
 </ion-content>
